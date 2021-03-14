@@ -1,4 +1,4 @@
-# WTTD (Welcome to the Django - Curso de Rede)
+# WTTD (Welcome to the Django - Curso)
 
 ## Eventex - APP Web
 
