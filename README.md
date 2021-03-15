@@ -51,7 +51,7 @@ localhost:8000 ou 127.0.0.1:8000
 *sugestão: para facilitar seu desenvolvimento. usar o alias no seu perfil/terminal padrão, ex:
 
     unix:
-        alias='python $VIRTUAL_ENV/../manage.py'
+        (.wttd)wttd$ alias manage='python $VIRTUAL_ENV/…/manage.py'
 
     windows:
         echo > wttd/.venv/Scripts/manage.bat
