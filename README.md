@@ -1,17 +1,11 @@
-# WTTD (Welcome to the Django - Curso)
+# Eventex 
 
-## Eventex - APP Web
-
-Sistema de Eventos criado no curso Welcome To The Django.
+Sistema de Eventos criado no curso Welcome to the Django.
 Exemplo disponível em: https://eventex-valeriofarias.herokuapp.com/
 
-Requisitos mínimos:
+Requisitos mínimos: git, heroku, python versão >= 3.5
 
-    git
-    heroku
-    python versão >= 3.5
-
-### Como clonar e rodar o projeto na sua máquina?
+## Como desenvolver
 
 1. Clone o repositório
 ```
@@ -20,18 +14,19 @@ cd wttd
 ```
 2. Crie um ambiente virtual
 ```
-python -m venv .venv
+python -m venv .wttd
 ```
 3. Ative o ambiente virtual
 ```
 unix source .venv/bin/activate
 windows .\venv\Scripts\activate
 ```
-4. Instale as dependências. Obs.: Evite instalar localmente (psycopg2-binary==2.8.6 e gunicorn==20.0.4)
+4. Instale as dependências 
+Obs.: Evite instalar localmente (psycopg2-binary==2.8.6 e gunicorn==20.0.4)
 ```
 pip install -r requirements.txt
 ```
-5. Configure a instância com o .env-sample
+5. Configure a instância com o .env
 ```
 cp contrib/env-sample .env
 ```
@@ -48,33 +43,41 @@ Abra o navegador e acesso o projeto no endereço
 ```
 localhost:8000 ou 127.0.0.1:8000
 ```
-*sugestão: para facilitar seu desenvolvimento. usar o alias no seu perfil/terminal padrão, ex:
+Para facilitar seu desenvolvimento use o alias no seu terminal:
 
     unix:
-        (.wttd)wttd$ alias manage='python $VIRTUAL_ENV/…/manage.py'
+        (.wttd)wttd$ alias manage='python $VIRTUAL_ENV/../manage.py'
 
     windows:
         echo > wttd/.venv/Scripts/manage.bat
         insira no arquivo criado acima @python "%VIRTUAL_ENV%\..\manage.py" %*
 
-### Como fazer o deploy?
+### Sequência de comandos:
+```console
+git clone https://github.com/valeriofarias/wttd.git
+cd wttd
+python -m venv .wttd
+source .venv/bin/activate
+pip install -r requirements.txt
+cp contrib/env-sample .env
+python manage.py test
+```
 
-Crie uma instância no heroku
-```
-heroku create minha_instância
-```    
-Defina uma SECRET_KEY para instância à partir do django shell
-```            
-django.core.management.utils.get_random_secret_key()
-heroku config:set SECRET_KEY=copie_e_cole_do_valor_gerado_acima
-```
-Defina o DEBUG=False
-```
+## Como fazer o deploy?
+
+1. Crie uma instância no heroku
+2. Envie as configurações para o heroku
+3. Defina uma SECRET_KEY segura para instância usando o script secret_gen dentro da pasta contrib feito de acordo com hbn.link/secret_gen
+4. Defina DEBUG=False
+5. Configure o serviço de email e preencha os dados em .env
+6. Envie o código para o heroku
+
+### Sequência de comandos:
+```console
+heroku create minha instancia
+heroku config:push
+heroku config:set SECRET_KEY=`python contrib/secret_gen.py`
 heroku config:set DEBUG=False
-```
-Configure o serviço de email preencha os dados em .env como desejar
-
-Envie o código para o heroku
-```
-git push heroku
+# Configure o email
+git push heroku --force
 ```
