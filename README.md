@@ -58,7 +58,7 @@ git clone https://github.com/valeriofarias/wttd.git
 cd wttd
 python -m venv .wttd
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 cp contrib/env-sample .env
 python manage.py test
 ```
