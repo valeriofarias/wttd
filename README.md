@@ -98,8 +98,8 @@ http://localhost:8000/ ou http://127.0.0.1:8000/
 
 ```
 
-Após a configuração do alias basta usar no terminal de qualquer pasta dentro 
-do wttd com o virtualenv ativo:
+Após a configuração do alias será possível testar o app a partir de qualquer pasta dentro 
+do wttd com o virtualenv ativo apenas usando:
 ```
 manage test
 ```
