@@ -22,6 +22,9 @@ source .wttd/bin/activate
 pip install -r requirements-dev.txt
 cp contrib/env-sample .env
 python manage.py test
+python manage.py migrate
+python manage.py runserver
+# Abra o navegador em http://127.0.0.1:8000/
 ```
 
 ## Como fazer o deploy?
