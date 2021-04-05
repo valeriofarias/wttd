@@ -40,9 +40,9 @@ heroku config:set SECRET_KEY=`python contrib/secret_gen.py`
 heroku config:set DEBUG=False
 # Configure o email
 git push heroku --force
+```
 
-
-### Como desenvolver (passo a passo)
+### Como desenvolver (passo a passo detalhando o processo)
 
 1. Clone o repositório
 ```
