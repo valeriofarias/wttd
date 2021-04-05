@@ -17,7 +17,7 @@ Requisitos mínimos: git, heroku, python versão >= 3.5
 ```console
 git clone https://github.com/valeriofarias/wttd.git
 cd wttd
-python -m venv .wtttd
+python -m venv .wttd
 source .wttd/bin/activate
 pip install -r requirements-dev.txt
 cp contrib/env-sample .env
@@ -42,7 +42,7 @@ heroku config:set DEBUG=False
 git push heroku --force
 ```
 
-### Como desenvolver (passo a passo detalhando o processo)
+## Como desenvolver (passo a passo detalhando o processo)
 
 1. Clone o repositório
 ```
@@ -72,16 +72,17 @@ cp contrib/env-sample .env
 ```
 python manage.py test
 ```
-Passados os testes com sucesso, rode o servidor
+Passou nos testes, então rode o servidor
 ```
 python manage.py runserver
 ```
-Abra o navegador e acesso o projeto no endereço
+Abra o navegador e acesse o projeto no endereço
 ```
 localhost:8000 ou 127.0.0.1:8000
 ```
-Para facilitar seu desenvolvimento use o alias no seu terminal:
 
+### Dica para facilitar seu desenvolvimento: use o alias no terminal:
+```
     unix:
         (.wttd)wttd$ alias manage='python $VIRTUAL_ENV/../manage.py'
 
