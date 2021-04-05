@@ -77,13 +77,14 @@ cp contrib/env-sample .env
 ```
 python manage.py test
 ```
-Passou nos testes, então rode o servidor
+Passou nos testes, então rode as migrações e o servidor
 ```
+python manage.py migrate
 python manage.py runserver
 ```
 Abra o navegador e acesse o projeto no endereço
 ```
-localhost:8000 ou 127.0.0.1:8000
+http://localhost:8000/ ou http://127.0.0.1:8000/
 ```
 
 ### Dica para facilitar seu desenvolvimento: use o alias no terminal:
@@ -95,4 +96,10 @@ localhost:8000 ou 127.0.0.1:8000
         echo > wttd/.venv/Scripts/manage.bat
         insira no arquivo criado acima @python "%VIRTUAL_ENV%\..\manage.py" %*
 
+```
+
+Após a configuração do alias basta usar no terminal de qualquer pasta dentro 
+do wttd com o virtualenv ativo:
+```
+manage test
 ```
