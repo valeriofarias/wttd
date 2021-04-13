@@ -17,6 +17,7 @@ class SubscriptionForm(forms.Form):
     
     def clean_name(self):
         name = self.cleaned_data['name'].lower()
-        prep = ['da', 'das', 'de', 'do', 'dos']
-        words = [w.capitalize() if w not in prep else w for w in name.split()]
-        return ' '.join(words)
+        prep = {'da', 'das', 'de', 'do', 'dos'}
+        words = (w.capitalize() if w not in prep else w for w in name.split())
+        return ' '.join(words)              
+
